@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @order.name %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%=h @order.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%=h @order.address2 %>
+</p>
+
+<p>
+  <b>Town:</b>
+  <%=h @order.town %>
+</p>
+
+<p>
+  <b>County:</b>
+  <%=h @order.county %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%=h @order.postcode %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

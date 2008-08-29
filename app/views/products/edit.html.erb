@@ -1,0 +1,35 @@
+<h1>Editing product</h1>
+
+<% form_for(@product) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :sku %><br />
+    <%= f.text_field :sku %>
+  </p>
+  <p>
+    <%= f.label :published %><br />
+    <%= f.check_box :published %>
+  </p>
+  <p>
+  	Categories:<br />
+  	<% for category in Category.all %>
+  	<%= check_box_tag "product[category_ids][]", category.id, @product.category_ids.include?(category.id) %>
+  	<%= category.title %><br />
+  	<% end %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @product %> |
+<%= link_to 'Back', products_path %>

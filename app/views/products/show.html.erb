@@ -1,0 +1,27 @@
+<p>
+  <b>Name:</b>
+  <%=h @product.name %>
+</p>
+
+<p>
+  <b>Sku:</b>
+  <%=h @product.sku %>
+</p>
+
+<p>
+  <b>Published:</b>
+  <%=h @product.published %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @product.description %>
+</p>
+
+<p>
+	<b>Categories:</b>
+	<%= @product.categories.map {|c| c.title }.join(", ") %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
